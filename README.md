@@ -77,3 +77,17 @@ If there are any specific instructions that needs to be followed for any upgrade
 ```
 docker compose up -d
 ```
+
+## Güncelleme
+nano .env
+	// değiştir
+	MAIN_SERVICE_IMAGE=mangatasolutions/avs-finalizer:e422fd3e44747dafa860216d52c1f05a32028ca6
+
+docker compose down
+chmod +x run.sh
+./run.sh opt-in
+docker compose up -d
+docker container restart avs-finalizer-node
+
+docker logs -f avs-finalizer-node
+
